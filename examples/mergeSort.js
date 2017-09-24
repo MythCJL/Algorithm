@@ -1,3 +1,5 @@
+//归并排序
+
 function merge (left, right) {
   let result = []
   while (left.length > 0 && right.length > 0) {

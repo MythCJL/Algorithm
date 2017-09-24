@@ -1,3 +1,5 @@
+//计数排序
+
 function countSort (items) {
   const len = items.length
   const arr = Array.from(len)

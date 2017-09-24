@@ -1,4 +1,4 @@
-// a way I think about selectSort
+// 选择排序
 Array.prototype.selectSort = function () {
   let _arr = []
   for (let len = this.length; len > 0; len--) {

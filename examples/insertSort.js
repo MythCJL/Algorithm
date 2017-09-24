@@ -1,3 +1,5 @@
+//插入排序
+
 Array.prototype.insertSort = function (value) {
   for (let i = 1, len = this.length; i < len; i++) {
     let tmp

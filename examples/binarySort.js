@@ -1,3 +1,5 @@
+//二分排序
+
 Array.prototype.binarySort = function () {
   let key, low, high, mid
   for (let i = 1, len = this.length; i < len; i++) {
