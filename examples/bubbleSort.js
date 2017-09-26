@@ -1,18 +1,19 @@
-//冒泡排序
+// 冒泡排序
 
-Array.prototype.bubbleSort = function () {
-  for (let len = this.length; len > 0; len--) {
-    let temp
-    for (let i = 0; i < len; i++) {
-      if (this[i + 1] < this[i]) {
-        temp = this[i + 1]
-        this[i + 1] = this[i]
-        this[i] = temp
+const bubbleSort = function bubbleSort(arr) {
+  const array = arr;
+  for (let len = array.length; len > 0; len -= 1) {
+    let temp;
+    for (let i = 0; i < len; i += 1) {
+      if (array[i + 1] < array[i]) {
+        temp = array[i + 1];
+        array[i + 1] = array[i];
+        array[i] = temp;
       }
     }
   }
-  return this
-}
+  return array;
+};
 
-let arr = [1, 2, 3, 4, 7, 5, 6]
-console.log(arr.bubbleSort())
+const arr = [1, 2, 3, 4, 7, 5, 6];
+bubbleSort(arr);

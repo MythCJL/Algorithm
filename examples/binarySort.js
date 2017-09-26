@@ -1,40 +1,36 @@
-//二分排序
+// 二分排序
 
-Array.prototype.binarySort = function () {
-  let key, low, high, mid
-  for (let i = 1, len = this.length; i < len; i++) {
-    low = 0
-    high = i - 1
-    key = this[i]
+const binarySort = function binarySort(arr) {
+  let key;
+  let low;
+  let high;
+  let mid;
+  const array = arr;
+  for (let i = 1, len = array.length; i < len; i += 1) {
+    low = 0;
+    high = i - 1;
+    key = array[i];
     while (low < high) {
-      mid = Math.ceil((low + high) / 2)
-      if (this[mid] <= key) {
-        low = mid
-      }
-      if (this[mid] > key) {
-        high = mid
-      }
-      if (high - low < 2 && this[low] >= key) {
-      	high = low
-      }
-      if (high - low < 2 && this[high] <= key) {
-      	low = high
-      }
+      mid = Math.ceil((low + high) / 2);
+      if (array[mid] <= key) low = mid;
+      if (array[mid] > key) high = mid;
+      if (high - low < 2 && array[low] >= key) high = low;
+      if (high - low < 2 && array[high] <= key) low = high;
     }
-    if (key < this[high]) {
-      for (let j = i; j > high; j--) {
-        this[j] = this[j - 1]
+    if (key < array[high]) {
+      for (let j = i; j > high; j -= 1) {
+        array[j] = array[j - 1];
       }
-      this[high] = key
+      array[high] = key;
     } else {
-      for (let k = i; k > high + 1; k--) {
-        this[k] = this[k - 1]
+      for (let k = i; k > high + 1; k -= 1) {
+        array[k] = array[k - 1];
       }
-      this[high + 1] = key
+      array[high + 1] = key;
     }
   }
-  return this
-}
+  return array;
+};
 
-let arr = [4, 5, 8, 2, 1, 4, 5, 8]
-console.log(arr.binarySort())
+const arr = [4, 5, 8, 2, 1, 4, 5, 8];
+binarySort(arr);
